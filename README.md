@@ -1,5 +1,5 @@
 
-### DiffProsody: Latent Diffusion-based Prosody Generation for Expressive Speech Synthesis with Prosody Conditional Adversarial Training \[Demo\](https://prml-lab-speech-team.github.io/demo/DiffProsody/)
+### DiffProsody: Latent Diffusion-based Prosody Generation for Expressive Speech Synthesis with Prosody Conditional Adversarial Training [[Demo](https://prml-lab-speech-team.github.io/demo/DiffProsody/)]
 
 #### H.-S. Oh, S.-H. Lee, S.-W. Lee, *ICASSP*, 2023 (submitted)
 
