@@ -1,0 +1,53 @@
+base_config: ./fs.yaml
+task_cls: tasks.tts.prosody_generator.ProsodyGeneratorTask
+###########################
+# models
+###########################
+
+encoder_type: fft
+decoder_type: fft
+
+# encoders
+hidden_size: 192
+ffn_hidden_size: 384
+enc_ffn_kernel_size: 5
+enc_layers: 4
+use_word_encoder: true
+
+# decoders
+dec_layers: 4
+dec_ffn_kernel_size: 5
+
+# mix ling encoder
+word_enc_layers: 4
+word_encoder_type: fft
+text_encoder_postnet: true
+dropout: 0.1
+
+
+## model configs for diffspeech
+residual_layers: 20
+residual_channels: 256
+dilation_cycle_length: 1
+lr: 0.0002
+timesteps: 100
+K_step: 100
+diff_loss_type: l1
+diff_decoder_type: 'wavenet'
+schedule_type: 'linear'
+max_beta: 0.06
+
+prosody_mel_bins: 20
+valid_infer_interval: 2000
+vq_warmup: 2000000
+commitment_cost: 0
+
+###########################
+# training and inference
+###########################
+num_valid_plots: 10
+warmup_updates: 4000
+max_tokens: 40000
+max_sentences: 64
+max_updates: 100000
+keep_bins: 192

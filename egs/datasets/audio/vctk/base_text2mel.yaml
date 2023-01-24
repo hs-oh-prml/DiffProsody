@@ -1,0 +1,13 @@
+base_config: egs/egs_bases/tts/base.yaml
+raw_data_dir: '/workspace/dataset/VCTK/VCTK-Corpus'
+processed_data_dir: '/workspace/dataset/processed/vctk'
+binary_data_dir: '/workspace/dataset/binary/vctk'
+preprocess_cls: egs.datasets.audio.vctk.preprocess.VCTKPreprocess
+binarization_args:
+  train_range: [ 2725, -1 ]
+  test_range: [ 0, 2180 ]
+  valid_range: [ 2180, 2725 ]
+test_ids: []
+f0_min: 80
+f0_max: 800
+vocoder_ckpt: checkpoints/hifi_vctk

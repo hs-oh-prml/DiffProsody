@@ -1,0 +1,51 @@
+base_config:
+  - egs/egs_bases/tts/pg.yaml
+  - ./base_text2mel.yaml
+tts_model: ""
+
+task_cls: tasks.tts.prosody_generator.ProsodyGeneratorTask
+
+timesteps: 4
+K_step: 4
+residual_channels: 384
+disc_hidden_size: 192
+n_layer: 4
+n_uncond_layer: 2
+n_cond_layer: 2
+disc_n_channels: [384, 192, 96, 48]
+disc_kernel_sizes: [3, 3, 3, 3]
+disc_strides: [1, 1, 1, 1]
+
+lambda_adv: 1.0
+lambda_fm: 0.0
+lambda_lpv: 1.0
+
+lr: 0.0002
+disc_lr: 0.0001
+discriminator_scheduler_params:
+  gamma: 0.5
+  step_size: 40000
+generator_scheduler_params:
+  gamma: 0.5
+  step_size: 40000
+
+discriminator_optimizer_params:
+  eps: 1.0e-06
+  weight_decay: 0.0
+  
+disc_win_num: 3
+mel_disc_hidden_size: 192
+disc_norm: in
+disc_reduction: stack
+disc_interval: 1
+disc_start_steps: 0
+
+lpv_loss: l1
+
+max_tokens: 40000000
+max_sentences: 48
+max_updates: 320000
+
+max_beta: 20
+min_beta: 0.1
+ema_decay: 0.998

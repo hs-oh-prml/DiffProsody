@@ -1,0 +1,28 @@
+base_config: ./fs.yaml
+task_cls: tasks.tts.diffprosody.DiffProsodyTask
+
+###########################
+# models
+###########################
+encoder_type: fft
+decoder_type: fft
+
+# encoders
+hidden_size: 192
+ffn_hidden_size: 384
+enc_ffn_kernel_size: 5
+enc_layers: 4
+use_word_encoder: true
+
+# decoders
+dec_layers: 4
+dec_ffn_kernel_size: 5
+
+# mix ling encoder
+word_enc_layers: 4
+word_encoder_type: fft
+text_encoder_postnet: true
+dropout: 0.1
+
+max_updates: 160000
+mel_losses: mse|ssim

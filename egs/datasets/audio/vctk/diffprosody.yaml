@@ -1,0 +1,29 @@
+base_config:
+  - egs/egs_bases/tts/dp.yaml
+  - ./base_text2mel.yaml
+
+task_cls: tasks.tts.diffprosody.DiffProsodyTask
+
+prosody_mel_bins: 20
+valid_infer_interval: 2000
+vq_warmup: 20000
+commitment_cost: 0.25
+lambda_mel_adv: 0.05
+
+disc_win_num: 3
+mel_disc_hidden_size: 192
+disc_norm: in
+disc_reduction: stack
+disc_interval: 1
+disc_start_steps: 0
+discriminator_scheduler_params:
+  gamma: 0.5
+  step_size: 40000
+discriminator_optimizer_params:
+  eps: 1.0e-06
+  weight_decay: 0.0
+
+max_sentences: 48
+lr: 0.0005
+disc_lr: 0.0001
+ema_decay: 0.998
