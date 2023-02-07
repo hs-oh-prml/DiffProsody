@@ -47,13 +47,13 @@ CUDA_VISIBLE_DEVICES=0 python extract_lpv.py --config "egs/datasets/audio/vctk/d
 CUDA_VISIBLE_DEVICES=0 python tasks/run.py --config "egs/datasets/audio/vctk/prosody_generator.yaml" --exp_name "DiffProsodyGenerator" --reset --hparams="tts_model=/{ckpt dir}/DiffProsody"
 ```
 
-### 4. Inference
+### 5. Inference
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python tasks/run.py --config "egs/datasets/audio/vctk/prosody_generator.yaml" --exp_name "DiffProsodyGenerator" --infer --hparams="tts_model=/{ckpt dir}/DiffProsody"
 ```
 
-### 5. Pretrained checkpoints
+### 6. Pretrained checkpoints
 - TTS module trained on 160k [[Download]](https://works.do/xsBlIw8)
 - Diffusion-based prosody generator trained on 320k [[Download]](https://works.do/5CAF6E0)
 
